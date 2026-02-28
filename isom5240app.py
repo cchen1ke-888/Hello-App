@@ -8,7 +8,7 @@ st.write("Title: Age Classification using ViT")
 # Load the age classification pipeline
 # The code below should be placed in the main part of the program
 age_classifier = pipeline("image-classification",
-                          model="dima806/fairface-age-classification")
+                          model="nateraw/vit-age-classifier")
 
 image_name = "middleagedMan.jpg"
 image_name = Image.open(image_name).convert("RGB")
