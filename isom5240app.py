@@ -11,7 +11,7 @@ def img2text(url):
     text = image_to_text_model(url)[0]["generated_text"]
     return text
 
-# text2story
+# text2story 
 def text2story(text):
     pipe = pipeline("text-generation", model="pranavpsv/genre-story-generator-v2")
     story_text = pipe(text)[0]['generated_text']
