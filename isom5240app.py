@@ -2,11 +2,11 @@ from transformers import pipeline
 from PIL import Image
 import streamlit as st
 
-def ageClassifier():
+def ageClassifier(imgFilename):
   age_classifier = pipeline("image-classification",
                             model="MatanBT/age-vit-classifier")
   
-  image_name = "middleagedMan.jpg"
+  image_name = imgFilename
   image_name = Image.open(image_name).convert("RGB")
 
   age_predictions = age_classifier(image_name)
