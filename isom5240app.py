@@ -2,9 +2,7 @@ from transformers import pipeline
 from PIL import Image
 import streamlit as st
 
-def main():
-  st.header("Title: Age Classification using ViT")
-
+def ageClassifier():
   age_classifier = pipeline("image-classification",
                             model="MatanBT/age-vit-classifier")
   
@@ -12,9 +10,17 @@ def main():
   image_name = Image.open(image_name).convert("RGB")
 
   age_predictions = age_classifier(image_name)
+
+  return age_predictions
+
+def main():
+  st.header("Title: Age Classification using ViT")
+
+  age_predictions = ageClassifier()
+
   st.write(age_predictions)
   age_predictions = sorted(age_predictions, key=lambda x: x['score'], reverse=True)
-
+  
   st.write("Predicted Age Range:")
   st.write(f"Age range: {age_predictions[0]['label']}")
 
