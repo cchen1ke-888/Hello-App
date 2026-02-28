@@ -16,7 +16,7 @@ def ageClassifier(imgFilename):
 def main():
   st.header("Title: Age Classification using ViT")
 
-  age_predictions = ageClassifier()
+  age_predictions = ageClassifier("middleagedMan.jpg")
 
   st.write(age_predictions)
   age_predictions = sorted(age_predictions, key=lambda x: x['score'], reverse=True)
