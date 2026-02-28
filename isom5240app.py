@@ -24,4 +24,4 @@ print(f"Age range: {age_predictions[0]['label']}")
 
 
 
-st.write("Done")
+st.write("Done")   # 'st.write' in Web Application= 'print' in Python
